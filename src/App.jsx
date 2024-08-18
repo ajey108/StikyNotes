@@ -49,14 +49,39 @@ const App = () => {
 
   };
 
-  const updateNote = (id, newText) => {
-    setNotes(prevNotes =>
-      prevNotes.map(note => note.id === id ? { ...note, text: newText } : note)
-    );
+  const updateNote = async (id, newText) => {
+    try{
+      
+const { data, error } = await supabase
+.from('notes')
+.update({text: newText })
+.eq('id', id )
+.select()
+setNotes(prevNotes =>
+  prevNotes.map(note => note.id === id ? { ...note, text: newText } : note)
+);     
+
+    } catch(error){
+      console.log("Error Updating notes:", error.message);
+    }
+
+
+   
   };
 
-  const deleteNote = (id) => {
-    setNotes(notes.filter(note => note.id !== id))
+  const deleteNote = async(id) => {
+    try{
+      
+const { error } = await supabase
+.from('notes')
+.delete()
+.eq('id', id)
+setNotes(notes.filter(note => note.id !== id))
+        
+    }catch(error){
+      console.log("Error Deleting note:",error.message);
+    }
+   
     alert('Note deleted')
   }
 
