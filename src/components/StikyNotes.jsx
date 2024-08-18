@@ -20,23 +20,31 @@ const StikyNotes = ({ id, text, updateNote, deleteNote }) => {
   };
 
   return (
-    <>
-      <div className='flex gap-3 items-center m-4'>
-        <PiPencilSimpleBold onClick={handleShow} className='text-2xl cursor-pointer' />
-        <RiDeleteBin3Line onClick={deleteNote} className='text-2xl cursor-pointer' />
-        <button onClick={handleSave} className='bg-white w-[50px] rounded-sm h-9'>Save</button>
+    <div className="bg-green-100 shadow-lg rounded-lg p-4 w-full sm:w-96 mb-4">
+      <div className='flex justify-between items-center mb-2'>
+        <PiPencilSimpleBold onClick={handleShow} className='text-xl cursor-pointer hover:text-green-600' />
+        <RiDeleteBin3Line onClick={deleteNote} className='text-xl cursor-pointer hover:text-red-600' />
       </div>
 
-      {isEdit && (
-        <div className="m-4 w-[450px]">
-          <textarea
-            onChange={handleText}
-            className='bg-yellow-100 w-[400px] h-[300px]'
-            value={newText}
-          />
-        </div>
+      {isEdit ? (
+        <textarea
+          onChange={handleText}
+          className='w-full h-40 bg-green-50 p-2 rounded-lg border border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500'
+          value={newText}
+        />
+      ) : (
+        <p className="text-gray-800">{newText}</p>
       )}
-    </>
+
+      {isEdit && (
+        <button
+          onClick={handleSave}
+          className='mt-2 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-200'
+        >
+          Save
+        </button>
+      )}
+    </div>
   );
 }
 
