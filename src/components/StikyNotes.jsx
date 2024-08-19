@@ -21,7 +21,7 @@ const StikyNotes = ({ id, text, updateNote, deleteNote }) => {
 
   return (
     <div className="bg-green-100 shadow-lg rounded-lg p-4 w-full sm:w-96 mb-4">
-      <div className='flex justify-between items-center mb-2'>
+      <div className='flex justify-between items-center  mb-2'>
         <PiPencilSimpleBold onClick={handleShow} className='text-xl cursor-pointer hover:text-green-600' />
         <RiDeleteBin3Line onClick={deleteNote} className='text-xl cursor-pointer hover:text-red-600' />
       </div>
