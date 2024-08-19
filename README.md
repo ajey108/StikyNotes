@@ -16,34 +16,35 @@
 
 ### 1. Clone the Repository
 
-```bash
-git clone https://github.com/your-username/stikynotes.git
+```git clone https://github.com/your-username/stikynotes.git```
 cd stikynotes
 
 
-npm install
-# or
-yarn install
+
+### 2. Install Dependencies
+```npm install```
 
 
 
-REACT_APP_SUPABASE_URL=your_supabase_url
-REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+### 3. Configure Environment Variables
+
+```REACT_APP_SUPABASE_URL=your_supabase_url```
+```REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key```
 
 
-npm start
-# or
-yarn start
+### 4. Start the Development Server
+
+```npm start```
 
 
 
 
-Contributing
-Feel free to submit issues or pull requests. Please follow the standard Git workflow for contributions.
+### Contributing
+# Feel free to submit issues or pull requests. Please follow the standard Git workflow for contributions.
 
-License
+### License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Acknowledgements
+### Acknowledgements
 React: For building user interfaces.
 Supabase: For providing backend services.
