@@ -11,6 +11,9 @@
 - Responsive design for mobile and desktop views.
 - Share notes functionality.
 
+## Upcoming Feature
+  share,Dragable and color picker
+
 
 ### Visit The app
 [stikyNotes](stiky-notes.vercel.app)
